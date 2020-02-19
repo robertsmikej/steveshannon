@@ -86,7 +86,7 @@
       "type": "cards",
       "styles": {
         "class_alignment": "Left",
-        "class_max-width": "Small"
+        "class_max-width": "Unlimited"
       },
       "list": [
         {
