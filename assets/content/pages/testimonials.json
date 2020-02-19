@@ -38,7 +38,7 @@
     {
       "type": "cards",
       "styles": {
-        "class_max-width": "Unlimited"
+        "class_max-width": "Large"
       },
       "list": [
         {
