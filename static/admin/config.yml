@@ -156,6 +156,7 @@ collections:
       preview: false
     fields:
       - { label: 'Page Name', name: 'name', widget: 'string' }
+      - { label: 'Page Description', name: 'description', widget: 'text', required: false, hint: "What is the purpose of this page? This is for Search Engines."}
       - label: "Page Widget"
         name: "widgets"
         widget: "list"

@@ -1,12 +1,14 @@
 <template>
     <v-layout column justify-center align-center>
         <component :is="component.componentName" v-for="(component, index) in pagewidgets" :key="index" :slides="component.slides ? component.slides : null" :datas="component" :theme="component.themedata ? component.themedata : null" :cssStyles="component.css ? component.css : null"></component>
+        {{pageInfo}}
     </v-layout>
 </template>
 
 <script>
 export default {
     data: () => ({
+        page: "home",
         dynamic: null,
         componentName: null
     }),
@@ -15,10 +17,11 @@ export default {
     },
     computed: {
         sitewide: function () {
+            
             return this.$store.state.sitewide
         },
         pagewidgets: function () {
-            let pagewidgets = this.$store.state.pages[this.pageInfo.name].widgets;
+            let pagewidgets = this.$store.state.pages[this.page].widgets;
             for (let w in pagewidgets) {
                 let widget = pagewidgets[w];
                 if (widget.componentName) {
@@ -29,18 +32,22 @@ export default {
             return pagewidgets;
         },
         pageInfo: function () {
+            
             return this.$store.state.pages.index
         }
+    },
+    mounted() {
+        console.log(this);
     },
     head() {
         return {
             script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
-            title: this.sitewide.name + " - " + this.pageInfo.name,
+            title: "",
             meta: [
                 { 
                     hid: 'description',
                     name: 'description',
-                    content: this.pageInfo.description
+                    content: ""
                 },
                 { hid: 'robots', name: 'robots', content: 'index, follow' }
             ]
