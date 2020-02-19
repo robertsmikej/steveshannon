@@ -17,7 +17,8 @@
       "type": "spacer",
       "styles": {
         "class_height": "Medium",
-        "line": false
+        "line": false,
+        "class_line": false
       }
     },
     {
@@ -29,7 +30,9 @@
       "styles": {
         "class_height": "Medium",
         "line": true,
-        "color_line": "Dark Text Color"
+        "color_line": "Dark Text Color",
+        "backgroundColor_line": "Dark Text Color",
+        "class_line": true
       }
     }
   ]
