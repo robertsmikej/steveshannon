@@ -28,6 +28,20 @@
       "styles": {
         "class_height": "Medium"
       }
+    },
+    {
+      "type": "cards",
+      "styles": {
+        "class_alignment": "Left"
+      },
+      "list": [
+        {
+          "header": "Bed Depot",
+          "sub_header": "",
+          "file": "/img/bed_depot-why_spend_more-092409.mp3",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+      ]
     }
   ]
 }
