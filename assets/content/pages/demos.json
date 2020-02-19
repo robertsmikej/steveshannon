@@ -7,11 +7,11 @@
       "header_1": "Demos",
       "special": true,
       "styles": {
-        "class_alignment": "Right",
+        "class_alignment": "Left",
         "class_justify-content": "Bottom",
         "color_header": "Light Text Color"
       },
-      "desktop": "/img/orange_speaker_background2.jpg"
+      "desktop": "/img/orange_speaker_background.jpg"
     },
     {
       "type": "spacer",
