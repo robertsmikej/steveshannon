@@ -1,0 +1,33 @@
+{
+  "name": "demos",
+  "description": "Hear some of my demos",
+  "widgets": [
+    {
+      "type": "heroBanner",
+      "header_1": "Demos",
+      "special": true,
+      "styles": {
+        "class_alignment": "Right",
+        "class_justify-content": "Bottom",
+        "color_header": "Light Text Color"
+      },
+      "desktop": "/img/orange_speaker_background2.jpg"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium"
+      }
+    },
+    {
+      "type": "textSection",
+      "content": "## Demos\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium"
+      }
+    }
+  ]
+}
