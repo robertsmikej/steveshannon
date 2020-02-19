@@ -1,0 +1,33 @@
+{
+  "name": "testimonials",
+  "description": "Here are some of the things that people have said about me over the years.",
+  "widgets": [
+    {
+      "type": "heroBanner",
+      "header_1": "Testimonials",
+      "special": true,
+      "styles": {
+        "class_alignment": "Left",
+        "class_justify-content": "Bottom",
+        "color_header": "Light Text Color"
+      },
+      "desktop": "/img/orange_speaker_background.jpg"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium"
+      }
+    },
+    {
+      "type": "textSection",
+      "content": "## Testimonials"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium"
+      }
+    }
+  ]
+}
