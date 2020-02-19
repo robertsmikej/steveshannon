@@ -34,6 +34,34 @@
         "backgroundColor_line": "Dark Text Color",
         "class_line": true
       }
+    },
+    {
+      "type": "cards",
+      "styles": {
+        "class_max-width": "Unlimited"
+      },
+      "list": [
+        {
+          "header": "Whitney Hahn",
+          "sub_header": "Director - Digital Bard Video Productions",
+          "content": "“Coordinating copy with clients and relaying updates and direction to the voice talent can be tricky, but you made it easy. Your deliveries were fresh and nuanced, turn-around times were excellent and you never got annoyed with me over revisions. Thanks for your great service.”"
+        },
+        {
+          "header": "Eric C. Lindstrom",
+          "sub_header": "Creative Director - Communique Design & Marketing, Inc.",
+          "content": "“Working with Steve Shannon has been, truly, one of the most professional and pleasurable relationships we’ve formed with an outside talent at our advertising agency. His range of talent, turn-around and pricing is unparalleled. If it’s a 15 second tag or a 5 minute documentary, Steve has never let us down. We wish all our outsourced talent were HALF as good as Steve.”"
+        },
+        {
+          "header": "Barry Silverman",
+          "sub_header": "Soundworks, Inc.",
+          "content": "“We found Steve about a year ago, and he has proven to be a great addition to our stable of voice talent. He is quick to respond, does a great job, and if there is a re-do required, he is happy to do it. Steve helps us look good to our clients, and we appreciate that!”"
+        },
+        {
+          "header": "Eric Edwards",
+          "sub_header": "Owner - CMJ Media",
+          "content": "“CMJ Media provides full service advertising to a diverse client base and we’ve used Steve to handle quite a bit of our radio voiceover and production. Steve has a great voice and also offers a wide range of voice options. In addition, he’s very responsive, flexible, creative and can deliver the complete package – finding additional talent (if necessary), editing, directing and final production. We’ve been very happy with all aspects of Steve’s work and highly recommend him.”"
+        }
+      ]
     }
   ]
 }
