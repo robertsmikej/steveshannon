@@ -41,7 +41,7 @@
       "list": [
         {
           "header": "Bed Depot",
-          "sub_header": "a",
+          "sub_header": "",
           "file": "/img/bed_depot-why_spend_more-092409.mp3",
           "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
@@ -49,13 +49,13 @@
           "header": "Animal Oasis",
           "sub_header": "St. James, Florida",
           "file": "/img/Animal_Oasis-PacoBarney1-102209.mp3",
-          "content": "lorm"
+          "content": ""
         },
         {
           "header": "Johnny Meyers Discount Tires",
           "sub_header": "Boise, ID",
           "file": "/img/johnny_meyers_discount_tires-movie_trailer-072509.mp3",
-          "content": "Lorem"
+          "content": ""
         },
         {
           "header": "Suncoast Pest & Termite Control",
@@ -67,7 +67,7 @@
           "header": "Patio People of Naples",
           "sub_header": "",
           "file": "/img/patio_people_of_naples-free_umbrella-090809.mp3",
-          "content": "Lorem a"
+          "content": ""
         }
       ]
     }
