@@ -284,21 +284,6 @@ collections:
               - { label: 'Text', name: 'text', widget: 'string', required: false }
               - { label: 'Link', name: 'link', widget: 'string', required: false }
               - { label: "Special", name: "special", widget: "hidden", default: false }
-          - label: "Divider"
-            name: "divider"
-            widget: object
-            fields:
-              - label: "Style Options"
-                name: "styles"
-                widget: object
-                fields:
-                  - label: "Spacing"
-                    name: "class_margin"
-                    hint: "How big should the space Above and Below be?"
-                    widget: "select"
-                    options: ["Extra Small", "Small", "Medium", "Large", "Extra Large"]
-                    default: "Medium"
-                    required: false
           - label: "Spacer"
             name: "spacer"
             widget: object
@@ -313,6 +298,17 @@ collections:
                     widget: "select"
                     options: ["Extra Small", "Small", "Medium", "Large", "Extra Large", "Mega Ultra Huge"]
                     default: "Medium"
+                    required: false
+                  - { label: 'Show Horizontal Line', name: "class_line", widget: "boolean", hint: "Should we put a horizontal line in the middle of the spacer?", required: false, default: false }
+                  - label: "Line Color"
+                    name: "backgroundColor_line"
+                    hint: "Which color should the line Be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Dark Text Color"
                     required: false
           - label: "Text Section"
             name: "textSection"
@@ -329,21 +325,45 @@ collections:
                 fields:
                   - { label: 'Header', name: 'header', widget: 'string', required: false, default: "Header Text Here"}
                   - { label: 'Sub Header', name: 'sub_header', widget: 'string', required: false, default: "Sub Header Text Here"}
-                  - { label: 'Text Content', name: 'content', widget: 'markdown' }
+                  - { label: 'Text Content', name: 'content', widget: 'markdown', required: false }
                   - { label: 'Icon', name: 'icon', widget: 'image', required: false, hint:"Optional. Icon here if wanted in card." }
                   - { label: 'Link', name: 'link', widget: 'string', required: false }
+                  - label: "Audio File"
+                    name: "file"
+                    hint: "Add an audio file to the card"
+                    widget: "file"
+                    required: false
+                    media_library:
+                      config:
+                        multiple: false
               - label: "Style Options"
                 name: "styles"
                 widget: object
                 fields:
-                  - label: "Alignment"
-                    name: "class_alignment"
-                    hint: "Where Should We Align The Text In The Slide(s)?"
+                  - label: "Max Width Of Cards"
+                    name: "class_max-width"
+                    hint: "Should the cards have a max-width in this section? Makes smaller cards, etc."
                     widget: "select"
-                    options: ["Left", "Center", "Right"]
-                    default: "Left"
+                    options: ["Small", "Medium", "Large", "Unlimited"]
+                    default: "Small"
                     required: false
-
+          - label: "Contact Form"
+            name: "contact"
+            widget: object
+            fields:
+              - name: 'items'
+                label: 'Contact Form Item'
+                widget: "list"
+                fields:
+                - {label: "Text", name: "text", widget: "string"}
+                - {label: "Required Item", name: "required", widget: "boolean", default: false, required: false }
+                - {label: "Short Name", name: "short_name", widget: "string"}
+                - {label: "Placeholder", name: "placeholder", widget: "string", required: false}
+                - label: "Field Type"
+                  name: "type"
+                  widget: "select"
+                  options: ["text", "email", "tel", "url"]
+              - {label: "Submit Button Text", name: "button_text", widget: "string"}
 
   - name: 'themes'
     label: 'Site Themes'
@@ -391,31 +411,4 @@ collections:
     fields:
       - { label: 'Color Name', name: 'name', widget: 'string', required: true }
       - { label: "Color Code", name: "code", widget: 'string', required: true }
-
-  - name: 'demos'
-    label: 'Demos'
-    identifier_field: name
-    format: 'json'
-    folder: 'assets/content/demos'
-    create: true
-    slug: '{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - label: "Demo Section"
-        name: "sections"
-        widget: "list"
-        fields:
-          - { label: 'Section Name', name: 'name', widget: 'string', required: true }
-          - label: "Demos"
-            name: "list"
-            widget: "list"
-            fields:
-              - { label: 'Demo Name', name: 'name', widget: 'string', required: true }
-              - label: "Demo File"
-                name: "file"
-                widget: "file"
-                media_library:
-                  config:
-                    multiple: false
   

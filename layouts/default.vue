@@ -138,7 +138,8 @@ export default {
                     },
                     footer: {
                         "dark": true,
-                        "fixed": false
+                        "fixed": false,
+                        absolute: true
                     }
                 }
             }
@@ -210,7 +211,7 @@ main {
 
 .container {
     max-width: 1300px;
-    padding-top: 0;
+    padding: 0 0 80px;
 }
 
 h1 {
@@ -224,7 +225,7 @@ h1 {
 h2 {
     font-size: 1.9em;
     line-height: 1em;
-    font-weight: 400;
+    font-weight: 500;
     margin: 14px 0;
 }
 h3 {
@@ -271,6 +272,11 @@ a {
     line-height: 1em;
     font-weight: 400;
 }
+
+.v-navigation-drawer--open {
+    display: none
+}
+
 /* ------------------ MEDIA QUERY ------------------ */
 @media screen and (max-width: 1500px) {
     html {
@@ -291,8 +297,8 @@ a {
         line-height: 17px;
     }
 }
-/* ----------------------------  MEDIA QUERY ------------------------------ */
-@media screen and (max-width: 700px) {
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 768px) {
     html {
         font-size: 16px;
         line-height: 16px;
@@ -307,6 +313,9 @@ a {
         line-height: 1em;
         font-weight: 500;
         margin: 10px 0;
+    }
+    .v-navigation-drawer--open {
+        display: flex;
     }
 }
 /* ----------------------------  MEDIA QUERY ------------------------------ */

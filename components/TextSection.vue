@@ -16,7 +16,7 @@ export default {
 <style>
 .page__text__section {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 20px auto;
     display: flex;
     flex-direction: column;

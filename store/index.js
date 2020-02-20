@@ -92,16 +92,23 @@ export const mutations = {
                     for (let s in widget.styles) {
                         if (s.indexOf("class_") >= 0) { //SET CLASSES
                             let style = s.split("class_")[1];
-                            let choosen = widget.styles[s].toLowerCase().replace(/ /g, "-");
+                            let choosen;
+                            if (typeof widget.styles[s] !== "boolean") {
+                                choosen = widget.styles[s].toLowerCase().replace(/ /g, "-");
+                            } else {
+                                choosen = widget.styles[s];
+                            }
                             classArr.push(type + "--" + style + "--" + choosen);
                         } else { //SET PARSED STYLES
                             let style = s.split("_")[0];
                             let elem = s.split("_")[1];
                             if (elem in widget.parsedStyles) {
-                                widget.parsedStyles[elem][style] = widget.styles[s];
-                            } else {
-                                widget.parsedStyles[elem] = {};
                                 widget.parsedStyles[elem][style] = state.colors[widget.styles[s]].code;
+                            } else {
+                                if (elem) {
+                                    widget.parsedStyles[elem] = {};
+                                    widget.parsedStyles[elem][style] = state.colors[widget.styles[s]].code;
+                                }
                             }
                         }
                     }

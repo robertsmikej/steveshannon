@@ -2,35 +2,38 @@
     <div :class="datas.classes" class="site__cards">
         <v-card :nuxt="item.link ? true : false" :to="item.link ? item.link : null" v-for="(item, index) in datas.list" :key="index">
             <div class="card__header__container">
-                <v-list-item-avatar
-                    tile
-                    size="60"
-                    color="transparent"
-                >
+                <v-list-item-avatar v-if="item.icon" tile size="60" color="transparent">
                     <img :src="item.icon" :alt="item.header" class="card__icon">
                 </v-list-item-avatar>
-                <div class="card__header__container__text">
+                <div v-if="item.header" class="card__header__container__text">
                     <v-list-item-title class="headline mb-1">{{ item.header }}</v-list-item-title>
-                    <v-list-item-subtitle>{{ item.sub_header }}</v-list-item-subtitle>
+                    <v-list-item-subtitle v-if="item.sub_header">{{ item.sub_header }}</v-list-item-subtitle>
                 </div>
             </div>
-            
-            <v-list-item-content class="card__content">
-                
-                
+            <v-list-item-content v-if="item.content" class="card__content">
                 <div v-html="$md.render(item.content)"></div>
             </v-list-item-content>
-            <!-- {{item}} -->
-            
+            <vue-plyr ref="plyr" v-if="item.file">
+                <audio>
+                    <source :src="item.file" type="audio/mp3"/>
+                </audio>
+            </vue-plyr>
         </v-card>
     </div>
 </template>
 
 <script>
+import VuePlyr from 'vue-plyr/dist/vue-plyr.ssr.js'
+
 export default {
     props: {
         datas: Object,
         theme: Object
+    },
+    computed: {
+        player () {
+            return this.$refs.plyr.player
+        }
     },
     data() {
         return {
@@ -56,19 +59,44 @@ export default {
 }
 .site__cards {
     width: 100%;
+    max-width: 1200px;
     margin: 0 auto 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-around;
+    align-content: center;
 }
 .v-card {
     flex: 1 1 auto;
-    padding: 16px;
+    padding: 20px;
     box-sizing: border-box;
-    max-width: 350px;
-    margin: 10px;
+    margin: 20px 10px;
+    min-width: 240px;
+}
+.cards--max-width--small {
+    justify-content: space-around;
+}
+.cards--max-width--small .v-card {
+    width: 23%;
+}
+.cards--max-width--medium {
+    justify-content: space-around;
+}
+.cards--max-width--medium .v-card {
+    width: 31%;
+}
+.cards--max-width--large {
+    justify-content: space-around;
+}
+.cards--max-width--large .v-card {
+    min-width: 240px;
+    width: 47%;
+}
+.cards--max-width--unlimited {
+    justify-content: flex-start;
+}
+.cards--max-width--unlimited .v-card {
+    width: 100%;
 }
 
 .v-card .v-list-item__title, .v-card .v-list-item__subtitle {
@@ -91,4 +119,5 @@ export default {
     align-content: center;
     justify-content: center;
 }
+
 </style> 

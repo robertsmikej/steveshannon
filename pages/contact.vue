@@ -29,7 +29,7 @@ export default {
             return pagewidgets;
         },
         pageInfo: function () {
-            return this.$store.state.pages.demos
+            return this.$store.state.pages.contact
         }
     },
     head() {
