@@ -1,0 +1,17 @@
+{
+  "name": "contact",
+  "description": "Need some work done? Contact me and let's get to work!",
+  "widgets": [
+    {
+      "type": "heroBanner",
+      "header_1": "Contact Me",
+      "special": true,
+      "styles": {
+        "class_alignment": "Left",
+        "class_justify-content": "Bottom",
+        "color_header": "Light Text Color"
+      },
+      "desktop": "/img/orange_speaker_background.jpg"
+    }
+  ]
+}
