@@ -28,14 +28,14 @@
           "text": "Name",
           "required": true,
           "short_name": "name",
-          "placeholder": "E.G. Ian Malcolm",
+          "placeholder": "",
           "type": "text"
         },
         {
           "text": "E-Mail",
           "required": true,
           "short_name": "email",
-          "placeholder": "E.G. johnhammond@ingen.com",
+          "placeholder": "",
           "type": "email"
         },
         {
@@ -45,20 +45,14 @@
           "type": "tel"
         },
         {
-          "text": "Company Name (If Applicable)",
+          "text": "Your Company Name (If Applicable)",
           "required": false,
           "short_name": "company",
-          "placeholder": "Ingen Genetics",
+          "placeholder": "",
           "type": "text"
         },
         {
-          "text": "Your Current Website (If Applicable)",
-          "required": false,
-          "short_name": "current_website",
-          "type": "text"
-        },
-        {
-          "text": "How Can We Help You?",
+          "text": "How Can I Help?",
           "required": false,
           "short_name": "message",
           "type": "text"
