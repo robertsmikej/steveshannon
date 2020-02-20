@@ -24,7 +24,7 @@
     "nav": {
       "hamburger": false,
       "show_name": true,
-      "show_logo": true,
+      "show_logo": false,
       "styles": {
         "background-color": "Light Orange",
         "color": "Light Text Color"
