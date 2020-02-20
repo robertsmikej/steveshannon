@@ -12,6 +12,18 @@
         "color_header": "Light Text Color"
       },
       "desktop": "/img/orange_speaker_background.jpg"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Large",
+        "class_line": false,
+        "backgroundColor_line": "Dark Text Color"
+      }
+    },
+    {
+      "type": "contact",
+      "button_text": "Submit"
     }
   ]
 }
