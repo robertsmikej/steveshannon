@@ -35,7 +35,10 @@
     },
     {
       "type": "textSection",
-      "content": "## Browse My Services"
+      "content": "## Browse My Services",
+      "styles": {
+        "backgroundColor_textsection": "Teal"
+      }
     },
     {
       "type": "cards",
