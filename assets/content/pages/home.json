@@ -37,7 +37,8 @@
       "type": "textSection",
       "content": "## Browse My Services",
       "styles": {
-        "backgroundColor_textsection": "Teal"
+        "backgroundColor_textsection": "Teal",
+        "color_textsection": "White"
       }
     },
     {
