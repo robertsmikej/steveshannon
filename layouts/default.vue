@@ -226,7 +226,7 @@ h2 {
     font-size: 1.9em;
     line-height: 1em;
     font-weight: 500;
-    margin: 14px 0;
+    margin: 20px 0 0;
 }
 h3 {
     font-size: 1.5em;

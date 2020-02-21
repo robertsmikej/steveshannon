@@ -1,6 +1,6 @@
 <template>
-    <div :class="datas.classes" class="page__text__section" v-html="$md.render(datas.content)">
-        {{datas}}
+    <div :class="datas.classes" :style="datas.parsedStyles[Object.keys(datas.parsedStyles)[0]]" class="page__text__section" v-html="$md.render(datas.content)">
+        {{datas.parsedStyles}}
     </div>
 </template>
 
@@ -16,8 +16,8 @@ export default {
 <style>
 .page__text__section {
     width: 100%;
-    max-width: 1100px;
-    margin: 20px auto;
+    max-width: 1200px;
+    margin: 20px auto 0;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

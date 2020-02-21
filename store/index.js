@@ -87,6 +87,7 @@ export const mutations = {
                 let classArr = [];
                 let subClasses = [];
                 widget.parsedStyles = {};
+                widget.attributes = {};
                 classArr.push(type);
                 if (widget.styles) {
                     for (let s in widget.styles) {
@@ -99,6 +100,18 @@ export const mutations = {
                                 choosen = widget.styles[s];
                             }
                             classArr.push(type + "--" + style + "--" + choosen);
+                        } else if (s.indexOf("attribute_") >= 0) { //SET ATTRIBUTES FOR VUETIFY COMPONENTS
+                            let attribute = s.split("attribute_")[1];
+                            let choosen;
+                            if (typeof widget.styles[s] !== "boolean") {
+                                choosen = widget.styles[s].toLowerCase().replace(/ /g, "-");
+                            } else {
+                                choosen = widget.styles[s];
+                            }
+                            console.log(choosen);
+                            console.log(attribute);
+                            widget.attributes[attribute] = choosen;
+                            console.log(widget.attributes);
                         } else { //SET PARSED STYLES
                             let style = s.split("_")[0];
                             let elem = s.split("_")[1];

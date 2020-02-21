@@ -315,6 +315,30 @@ collections:
             widget: object
             fields:
               - { label: 'Text Content', name: 'content', widget: 'markdown', buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"], required: false }
+              - label: "Style Options"
+                name: "styles"
+                widget: object
+                fields:
+                  - label: "Text Color"
+                    name: "color_textsection"
+                    hint: "Which color should the text of this section be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Dark Text Color"
+                    required: false
+                  - label: "Background Color"
+                    name: "backgroundColor_textsection"
+                    hint: "Which color should the background of this section be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Light Text Color"
+                    required: false
           - label: "Cards"
             name: "cards"
             widget: object
@@ -327,6 +351,7 @@ collections:
                   - { label: 'Sub Header', name: 'sub_header', widget: 'string', required: false, default: "Sub Header Text Here"}
                   - { label: 'Text Content', name: 'content', widget: 'markdown', required: false }
                   - { label: 'Icon', name: 'icon', widget: 'image', required: false, hint:"Optional. Icon here if wanted in card." }
+                  - { label: 'Button Text', name: 'button', widget: 'string', required: false, hint: "If a Button is wanted, place text here."}
                   - { label: 'Link', name: 'link', widget: 'string', required: false }
                   - label: "Audio File"
                     name: "file"
@@ -342,10 +367,61 @@ collections:
                 fields:
                   - label: "Max Width Of Cards"
                     name: "class_max-width"
-                    hint: "Should the cards have a max-width in this section? Makes smaller cards, etc."
+                    hint: "What should the max-width be of cards in this section? Makes smaller cards, etc."
                     widget: "select"
                     options: ["Small", "Medium", "Large", "Unlimited"]
                     default: "Small"
+                    required: false
+                  - {label: "Slight Bend To Edges Of Cards", name: "attribute_shaped", widget: "boolean", default: false, required: false }
+                  - label: "Background Color - Container"
+                    name: "backgroundColor_container"
+                    hint: "Which color should the background of this whole container be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Light Text Color"
+                    required: false
+                  - label: "Text Color - Cards"
+                    name: "color_cards"
+                    hint: "Which color should the text of these cards be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Dark Text Color"
+                    required: false
+                  - label: "Background Color - Cards"
+                    name: "backgroundColor_cards"
+                    hint: "Which color should the background of these cards be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Light Text Color"
+                    required: false
+                  - label: "Background Color - Buttons"
+                    name: "backgroundColor_button"
+                    hint: "If there is a button in the cards, which color should the background be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Dark Text Color"
+                    required: false
+                  - label: "Text Color - Buttons"
+                    name: "color_button"
+                    hint: "If there is a button in the cards, which color should the text be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "White"
                     required: false
           - label: "Contact Form"
             name: "contact"

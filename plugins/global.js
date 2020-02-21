@@ -1,5 +1,6 @@
 import Vue from 'vue';
 
+import Contact from '../components/Contact.vue';
 import Carousel from '../components/Carousel.vue';
 import Divider from '../components/Divider.vue';
 import Creeperbar from '../components/Creeperbar.vue';
@@ -9,6 +10,7 @@ import Cards from '../components/Cards.vue';
 import HeroBanner from '../components/HeroBanner.vue';
 import TextSection from '../components/TextSection.vue';
 
+Vue.component('Contact', Contact);
 Vue.component('Carousel', Carousel);
 Vue.component('Divider', Divider);
 Vue.component('Creeperbar', Creeperbar);
