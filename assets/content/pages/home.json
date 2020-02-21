@@ -49,7 +49,8 @@
         "backgroundColor_container": "Teal",
         "color_cards": "Dark Text Color",
         "backgroundColor_cards": "White",
-        "backgroundColor_button": "Dark Orange"
+        "backgroundColor_button": "Dark Orange",
+        "color_button": "White"
       },
       "list": [
         {
