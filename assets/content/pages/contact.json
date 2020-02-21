@@ -22,6 +22,18 @@
       }
     },
     {
+      "type": "textSection",
+      "content": "### I'd love to hear from you\n\nWhether you'd like to work together, have something that needs to be recorded, or just want to say hello, I'd love to hear from you. Let's get in touch!"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium",
+        "class_line": false,
+        "backgroundColor_line": "Dark Text Color"
+      }
+    },
+    {
       "type": "contact",
       "items": [
         {
