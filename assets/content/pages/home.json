@@ -48,7 +48,8 @@
         "class_max-width": "Medium",
         "backgroundColor_container": "Teal",
         "color_cards": "Dark Text Color",
-        "backgroundColor_cards": "White"
+        "backgroundColor_cards": "White",
+        "backgroundColor_button": "Dark Orange"
       },
       "list": [
         {
