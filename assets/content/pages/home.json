@@ -50,7 +50,8 @@
         "color_cards": "Dark Text Color",
         "backgroundColor_cards": "White",
         "backgroundColor_button": "Dark Orange",
-        "color_button": "White"
+        "color_button": "White",
+        "attribute_shaped": true
       },
       "list": [
         {
