@@ -45,7 +45,10 @@
       "type": "cards",
       "styles": {
         "class_alignment": "Center",
-        "class_max-width": "Medium"
+        "class_max-width": "Medium",
+        "backgroundColor_container": "Teal",
+        "color_cards": "Dark Text Color",
+        "backgroundColor_cards": "White"
       },
       "list": [
         {
