@@ -1,7 +1,36 @@
 <template>
     <v-app>
-        <NavDrawer v-model="drawer" app :datas="nav"/>
-        <NavBar app ref="navbar" :datas="sitewide" :hamburger="this.sitewide.options.nav.hamburger ? this.sitewide.options.nav.hamburger : false"/>
+        <v-navigation-drawer  v-model="drawer" app v-bind="vtheme.navDrawer" :style="setStyles(sitewide.options.nav.styles)">
+            <v-list>
+                <v-list-item router exact v-for="(item, i) in nav" :key="i" :to="item.link" :style="setStyles(sitewide.options.nav.styles)">
+                    <v-list-item-action>
+                        <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title v-text="item.title" />
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
+        <v-app-bar app ref="navbar" v-bind="vtheme.navBar" :style="setStyles(sitewide.options.nav.styles)">
+            <div class="app__bar__container">
+                <div class="app__bar__name__container">
+                    <div v-if="sitewide.options.nav.show_logo" class="app__bar__logo__container">
+                        <img :src="sitewide.logo" :alt="sitewide.name + ' Logo'" class="app__bar__logo">
+                    </div>
+                    <v-toolbar-title v-if="sitewide.options.nav.show_name">
+                        {{ sitewide.name }}
+                    </v-toolbar-title>
+                </div>
+                <ul class="nav__links__no-hambuger" v-if="!sitewide.options.nav.hamburger">
+                    <nuxt-link v-for="(item, i) in nav" :key="i" :to="item.link" :style="setStyles(sitewide.options.nav.styles)">
+                            <img v-if="item.icon"/>
+                            <p>{{ item.title }}</p>
+                    </nuxt-link>
+                </ul>
+                <v-app-bar-nav-icon :class="{'nav__hamburger__hide' : !this.hamburgerHide}" v-bind="vtheme.button" right @click.stop="drawer = !drawer"/>
+            </div>
+        </v-app-bar>
         <Creeperbar v-if="sitewide.creeperbar.show_sitewide_creeper" :datas="sitewide.creeperbar" ref="creeper" :style="creeperThemed(themes, sitewide, this.$refs.navbar)" class="sitewide__creeper"/>
         <v-content :style="{'paddingTop': paddingMain}">
             <v-container>
@@ -13,15 +42,11 @@
 </template>
 
 <script>
-import NavDrawer from '~/components/NavDrawer.vue';
-import NavBar from '~/components/NavBar.vue';
 import Creeperbar from '~/components/Creeperbar.vue';
 import Footer from '~/components/Footer.vue';
 
 export default {
     components: {
-        NavDrawer,
-        NavBar,
         Creeperbar,
         Footer
     },
@@ -86,12 +111,32 @@ export default {
     },
     mounted() {
         this.mainPadding();
+        this.hamburgerHide = this.sitewide.options.nav.hamburger;
     },
     data () {
         return {
             drawer: false,
             paddingMain: "0px",
-            hamburgerHide: false
+            hamburgerHide: false,
+            vtheme: {
+                navDrawer: {
+                    fixed: true,
+                    right: false,
+                    "mini-variant": false,
+                    clipped: false
+                },
+                navBar: {
+                    clipped: false,
+                    fixed: false,
+                    dark: false,
+                    dense: true,
+                    flat: true,
+                    "collapse-on-scroll": false
+                },
+                button: {
+                    dark: true
+                }
+            }
         }
     }
 }
