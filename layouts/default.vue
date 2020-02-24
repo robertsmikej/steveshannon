@@ -1,54 +1,29 @@
 <template>
     <v-app>
-        <v-navigation-drawer v-model="drawer" app v-bind="vtheme.wrapper.nav.drawer" :style="setStyles(sitewide.options.nav.styles)">
-            <v-list>
-                <v-list-item router exact v-for="(item, i) in nav" :key="i" :to="item.link" :style="setStyles(sitewide.options.nav.styles)">
-                    <v-list-item-action>
-                        <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title v-text="item.title" />
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list>
-        </v-navigation-drawer>
-        <v-app-bar app v-bind="vtheme.wrapper.nav.bar" ref="navbar" :style="setStyles(sitewide.options.nav.styles)">
-            <div class="app__bar__container">
-                <div class="app__bar__name__container">
-                    <div v-if="sitewide.options.nav.show_logo" class="app__bar__logo__container">
-                        <img :src="sitewide.logo" :alt="sitewide.name + ' Logo'" class="app__bar__logo">
-                    </div>
-                    <v-toolbar-title v-if="sitewide.options.nav.show_name">
-                        {{ sitewide.name }}
-                    </v-toolbar-title>
-                </div>
-                <ul class="nav__links__no-hambuger" v-if="!sitewide.options.nav.hamburger">
-                    <nuxt-link v-for="(item, i) in nav" :key="i" :to="item.link" :style="setStyles(sitewide.options.nav.styles)">
-                            <img v-if="item.icon"/>
-                            <p>{{ item.title }}</p>
-                    </nuxt-link>
-                </ul>
-                <v-app-bar-nav-icon :class="{'nav__hamburger__hide' : !this.hamburgerHide}" v-bind="vtheme.wrapper.nav.button" right @click.stop="drawer = !drawer"/>
-            </div>
-        </v-app-bar>
+        <NavDrawer v-model="drawer" app :datas="nav"/>
+        <NavBar app ref="navbar" :datas="sitewide" :hamburger="this.sitewide.options.nav.hamburger ? this.sitewide.options.nav.hamburger : false"/>
         <Creeperbar v-if="sitewide.creeperbar.show_sitewide_creeper" :datas="sitewide.creeperbar" ref="creeper" :style="creeperThemed(themes, sitewide, this.$refs.navbar)" class="sitewide__creeper"/>
         <v-content :style="{'paddingTop': paddingMain}">
             <v-container>
                 <nuxt/>
             </v-container>
         </v-content>
-        <v-footer app v-bind="vtheme.wrapper.footer" :style="setStyles(sitewide.footer.styles)">
-            <span>&copy; {{ new Date().getFullYear() }} - {{ sitewide.name }}</span>
-        </v-footer>
+        <Footer :datas="sitewide"/>
     </v-app>
 </template>
 
 <script>
+import NavDrawer from '~/components/NavDrawer.vue';
+import NavBar from '~/components/NavBar.vue';
 import Creeperbar from '~/components/Creeperbar.vue';
+import Footer from '~/components/Footer.vue';
 
 export default {
     components: {
-        Creeperbar
+        NavDrawer,
+        NavBar,
+        Creeperbar,
+        Footer
     },
     computed: {
         wrapper: function () {
@@ -89,7 +64,7 @@ export default {
         mainPadding: function () {
             let paddingTop = 0;
             if (this.$refs.navbar) {
-                this.paddingMain = this.$refs.navbar.styles.height;
+                this.paddingMain = parseInt(this.$refs.navbar.$el.style.height.replace("px", ""));
             }
             if (this.$refs.creeper) {
                 let height = parseInt(this.$refs.creeper.$el.style.height.replace("px", "")) + parseInt(paddingTop);
@@ -111,41 +86,12 @@ export default {
     },
     mounted() {
         this.mainPadding();
-        this.hamburgerHide = this.sitewide.options.nav.hamburger
     },
     data () {
         return {
             drawer: false,
             paddingMain: "0px",
-            hamburgerHide: false,
-            vtheme: {
-                wrapper: {
-                    nav: {
-                        drawer: {
-                            fixed: true,
-                            right: false,
-                            "mini-variant": false,
-                            clipped: false
-                        },
-                        bar: {
-                            clipped: false,
-                            fixed: false,
-                            dark: false,
-                            dense: true,
-                            flat: true,
-                            "collapse-on-scroll": false
-                        },
-                        button: {
-                            dark: true
-                        }
-                    },
-                    footer: {
-                        "dark": true,
-                        "fixed": false,
-                        absolute: true
-                    }
-                }
-            }
+            hamburgerHide: false
         }
     }
 }
@@ -182,7 +128,7 @@ body, html {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: var(--dark-grey);
+    background-color: var(--site-white);
     scroll-behavior: smooth;
     font-family: var(--default-font);
     font-size: 16px;

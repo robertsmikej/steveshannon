@@ -1,5 +1,7 @@
 import Vue from 'vue';
 
+import NavDrawer from '../components/NavDrawer.vue';
+import NavBar from '../components/NavBar.vue';
 import Contact from '../components/Contact.vue';
 import Carousel from '../components/Carousel.vue';
 import Divider from '../components/Divider.vue';
@@ -10,6 +12,8 @@ import Cards from '../components/Cards.vue';
 import HeroBanner from '../components/HeroBanner.vue';
 import TextSection from '../components/TextSection.vue';
 
+Vue.component('NavDrawer', NavDrawer);
+Vue.component('NavBar', NavBar);
 Vue.component('Contact', Contact);
 Vue.component('Carousel', Carousel);
 Vue.component('Divider', Divider);
