@@ -112,7 +112,6 @@ export default {
 .cards--max-width--unlimited .v-card {
     width: 100%;
 }
-
 .v-card .v-list-item__title, .v-card .v-list-item__subtitle {
     text-align: center;
     margin: 0;
@@ -133,8 +132,17 @@ export default {
     align-content: center;
     justify-content: center;
 }
-
 .v-card .v-btn {
     margin: auto auto 0;
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 768px) {
+    .site__cards {
+        padding: 14px;
+    }
+    .v-card {
+        padding: 16px;
+        margin: 20px 6px;
+    }
 }
 </style> 

@@ -17,7 +17,8 @@ export default {
 .page__text__section {
     width: 100%;
     max-width: 1200px;
-    margin: 20px auto 0;
+    margin: 0 auto;
+    padding: 20px 50px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -27,5 +28,17 @@ export default {
 .page__text__section  h2 {
     text-align: center;
     width: 100%;
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 768px) {
+    .page__text__section {
+        padding: 20px;
+    }
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 500px) {
+    .page__text__section {
+        padding: 20px 14px;
+    }
 }
 </style> 

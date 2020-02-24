@@ -56,14 +56,12 @@ export default {
         height: 0;
         opacity: 0;
     }
-
     .contact__box {
         width: 100%;
         position: relative;
         margin: 0;
         padding-bottom: 10vh;
     }
-
     .contact__box__inner {
         display: flex;
         flex-direction: column;
@@ -83,7 +81,6 @@ export default {
         max-width: 820px;
         margin: 30px auto 10px;
     }
-
     .contact__form__container {
         width: 100%;
         max-width: 700px;
@@ -94,7 +91,6 @@ export default {
         align-content: flex-start;
         justify-content: center;
         background-color: var(--teal);
-        
         border-radius: 10px;
         padding: 0px 20px;
     }
@@ -122,20 +118,19 @@ export default {
         width: 100%;
         padding: 10px 10px;
         font-size: 14px;
-        border-left: 1px solid #FFF;
+        background: #FFF;
+        /* border-left: 1px solid #FFF;
         border-bottom: 1px solid #FFF;
-        background: transparent;
-        color: #FFF;
+        background: transparent; */
+        /* color: #FFF; */
     }
     .contact__form__container textarea {
         border: none;
         width: 100%;
         padding: 10px 10px;
         font-size: 14px;
-        border-left: 1px solid #FFF;
-        border-bottom: 1px solid #FFF;
-        background: transparent;
-        color: #FFF;
+        background: #FFF;
+        /* color: #FFF; */
     }
     .contact__form__container input::placeholder, .contact__form__container textarea::placeholder {
         font-weight: 500;
@@ -171,6 +166,18 @@ export default {
     .contact__form__container .contact__submit {
         margin: 8px auto 0;
     } 
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 768px) {
+
+    .contact__form__container {
+        border-radius: 0;
+        margin: 0;
+        padding: 0 10px;
+    }
+    .contact__box {
+        padding-bottom: 0;
+    }
 }
 /* ------------------ MEDIA QUERY ------------------ */
 @media screen and (max-width: 410px) {

@@ -28,7 +28,7 @@
                             <p>{{ item.title }}</p>
                     </nuxt-link>
                 </ul>
-                <v-app-bar-nav-icon :class="{'nav__hamburger__hide' : !this.hamburgerHide}" right @click.stop="drawer = !drawer"/>
+                <v-app-bar-nav-icon :class="{'nav__hamburger__hide' : !this.hamburgerHide}" v-bind="vtheme.wrapper.nav.button" right @click.stop="drawer = !drawer"/>
             </div>
         </v-app-bar>
         <Creeperbar v-if="sitewide.creeperbar.show_sitewide_creeper" :datas="sitewide.creeperbar" ref="creeper" :style="creeperThemed(themes, sitewide, this.$refs.navbar)" class="sitewide__creeper"/>
@@ -134,7 +134,10 @@ export default {
                             dense: true,
                             flat: true,
                             "collapse-on-scroll": false
-                        }    
+                        },
+                        button: {
+                            dark: true
+                        }
                     },
                     footer: {
                         "dark": true,
@@ -321,12 +324,15 @@ a {
 /* ----------------------------  MEDIA QUERY ------------------------------ */
 @media screen and (max-width: 500px) {
     h1 {
-        font-size: 1.4em;
+        font-size: 2em;
         line-height: 1.1em;
     }
     h2 {
-        font-size: 1.4em;
+        font-size: 1.6em;
         margin: 4px 0;
+    }
+    .v-toolbar__title {
+        font-size: 1em;
     }
 }
 
@@ -390,4 +396,5 @@ a {
         display: none;
     }
 }
+
 </style>
