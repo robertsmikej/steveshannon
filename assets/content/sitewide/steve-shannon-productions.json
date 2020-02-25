@@ -1,9 +1,13 @@
 {
   "creeperbar": {
-    "show_sitewide_creeper": false,
+    "show_sitewide_creeper": true,
     "text": "20% Off Your Next Order!",
     "link": "/sales",
-    "alignment": "Center"
+    "styles": {
+      "alignment": "Center",
+      "background-color": "Teal",
+      "color": "White"
+    }
   },
   "theme": "Light",
   "logo": "/img/vue-logo.png",
