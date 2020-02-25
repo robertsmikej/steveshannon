@@ -4,7 +4,7 @@
     "text": "20% Off Your Next Order!",
     "link": "/sales",
     "styles": {
-      "alignment_creeper": "Center",
+      "class_alignment": "Right",
       "backgroundColor_nav": "Teal",
       "color_nav": "White"
     }
