@@ -4,9 +4,9 @@
     "text": "20% Off Your Next Order!",
     "link": "/sales",
     "styles": {
-      "alignment": "Center",
-      "background-color": "Teal",
-      "color": "White"
+      "alignment_creeper": "Center",
+      "backgroundColor_nav": "Teal",
+      "color_nav": "White"
     }
   },
   "theme": "Light",
@@ -19,8 +19,8 @@
     "show_site_links": true,
     "show_social": true,
     "styles": {
-      "background-color": "Dark Orange",
-      "color": "Light Text Color"
+      "backgroundColor_footer": "Dark Orange",
+      "color_footer": "White"
     }
   },
   "email": "steve@steveshannonproductions.com",
